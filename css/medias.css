@@ -1,0 +1,75 @@
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.9);
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        z-index: 999;
+        
+        /* Ocultar inicialmente */
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        
+        /* Agregamos transición suave */
+        transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s;
+    }
+
+    .nav-links a {
+        display: block;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Ajustes al navbar cuando está activo */
+    .navbar {
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        padding: 0px 20px;
+        background: transparent;
+    }
+ 
+    .language-list {
+        top: 80px; /* Ajustamos para que no se superponga con el navbar */
+        right: 110px; /* Pegado a la derecha */
+    }
+
+    /* Botón de menú */
+    .menu-toggle {
+        display: block;
+        z-index: 1100;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Efecto de rotación del icono */
+    .menu-toggle.active i {
+        transform: rotate(180deg);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Cambiar el icono a una X */
+    .menu-toggle.active i::before {
+        content: "\f00d"; /* FontAwesome "X" */
+    }
+    .menu-toggle i {
+        font-size: 24px;
+        color: white;
+      }
+}

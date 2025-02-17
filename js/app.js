@@ -14,55 +14,31 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Funcionalidad de cambio de idioma
-  const languageList = document.querySelectorAll(".language-list li");
+  document.addEventListener("DOMContentLoaded", function () {
+    // Esperar a que Google Translate esté listo
+    function waitForTranslate() {
+        const select = document.querySelector(".goog-te-combo");
+        if (select) {
+            attachLanguageChange(select);
+        } else {
+            setTimeout(waitForTranslate, 500); // Revisar cada 500ms si está cargado
+        }
+    }
 
-  languageList.forEach((item) => {
-      item.addEventListener("click", function () {
-          const lang = item.getAttribute("data-lang");
-          translatePage(lang);
-      });
-  });
+    function attachLanguageChange(select) {
+        const languageList = document.querySelectorAll(".language-list li");
+        languageList.forEach((item) => {
+            item.addEventListener("click", function () {
+                const lang = item.getAttribute("data-lang");
+                select.value = lang;
+                select.dispatchEvent(new Event("change"));
+            });
+        });
+    }
 
-  function translatePage(lang) {
-      const translations = {
-          es: {
-              home: "Inicio",
-              about: "Sobre Nosotros",
-              services: "Servicios",
-              contact: "Contacto",
-          },
-          en: {
-              home: "Home",
-              about: "About Us",
-              services: "Services",
-              contact: "Contact",
-          },
-          fr: {
-              home: "Accueil",
-              about: "À Propos",
-              services: "Services",
-              contact: "Contact",
-          },
-          de: {
-              home: "Startseite",
-              about: "Über Uns",
-              services: "Dienstleistungen",
-              contact: "Kontakt",
-          },
-          it: {
-              home: "Home",
-              about: "Chi Siamo",
-              services: "Servizi",
-              contact: "Contatto",
-          },
-      };
-
-      document.querySelectorAll(".nav-links a").forEach((link, index) => {
-          const key = Object.keys(translations[lang])[index];
-          link.textContent = translations[lang][key];
-      });
-  }
+    waitForTranslate();
 });
+
 
 //menu-toggle
 document.addEventListener("DOMContentLoaded", function () {
@@ -85,5 +61,11 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
+
+//desplazar suavemente para abajo
+        // Función para desplazarse suavemente
+        document.getElementById("scrollToSection").addEventListener("click", function() {
+            document.getElementById("heroHome").scrollIntoView({ behavior: "smooth" });
+        });
 
 

@@ -28,22 +28,19 @@ font-family: 'Nova Round', cursive; */
 
 html, body, main {
     overflow-x: hidden;
-    background-color: #000000 !important;
+    /* background-color: #000000 !important; */
 }
 
 html{
   width: 100%;
+  margin: 0 auto;
+  background: url('../assets/img/oneway.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+  background-attachment: fixed;
 }
 
-main{
-    width: 90%;
-    margin: 0 auto;
-    background: url('../assets/img/oneway.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 70%;
-    background-attachment: fixed;
-}
 body{
     background: url('../assets/img/oneway.png');
     background-repeat: no-repeat;
@@ -129,12 +126,43 @@ body{
   padding: 30px 70px;
 }
 
+.btn-signUp {
+
+}
+
+/* Contenedor de la flecha */
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+  transition: transform 0.3s ease;
+  transition: ease-in-out 0.5s;
+}
+
+/* Cambio de color al pasar el mouse */
+.scroll-down:hover {
+    color: var(--golden);
+    transition: ease-in-out 0.5s;
+}
 /*----- End Float Buttons -----*/
 
 /*----- Start Header -----*/
+header {
+  width: 100%;
+  height: 100vh;
+  background: url('../assets/img/foto3.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 /* Estilos del Navbar */
 .navbar {
-  position: fixed;
+position: fixed !important;
   top: 0;
   left: 0;
   width: 100%;
@@ -146,6 +174,7 @@ body{
   background: transparent;
   transition: background 0.3s, color 0.3s;
   z-index: 1000;
+  box-shadow: none !important;
 }
 
 /* Logo */
@@ -208,13 +237,16 @@ body{
   transform: translateX(-50%);
   background: rgba(50, 50, 50, 0.9);
   color: var(--white);
-  font-size: 12px;
+  font-size: 16px;
   padding: 5px 10px;
   border-radius: 5px;
   white-space: nowrap;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
+  text-transform: capitalize ; /* Asegura que respete el texto original */
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+  font-weight: 300;
 }
 
 /* Flecha del tooltip */
@@ -247,10 +279,15 @@ body{
   display: inline-block;
   cursor: pointer;
 }
+.dropdown.programs {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
 
 
 /* Lista de idiomas */
-.language-list, .user-list, .download-list {
+.language-list, .user-list, .download-list, .programs-list {
   position: fixed; /* Lo fijamos en la pantalla */
   background: rgba(50, 50, 50, 0.9);
   border-radius: 8px;
@@ -264,21 +301,25 @@ body{
 }
 
 .language-list{
-  top: 13.8%; /* Ajustamos para que no se superponga con el navbar */
+  top: 13.7%; /* Ajustamos para que no se superponga con el navbar */
   right: 11.9%; /* Pegado a la derecha */
 }
 .user-list{
-  top: 13.8%; /* Ajustamos para que no se superponga con el navbar */
+  top: 13.7%; /* Ajustamos para que no se superponga con el navbar */
   right: 7.4%; /* Pegado a la derecha */
 }
 
 .download-list{
-  top: 13.8%; /* Ajustamos para que no se superponga con el navbar */
+  top: 13.7%; /* Ajustamos para que no se superponga con el navbar */
   right: 2.6%; /* Pegado a la derecha */
+}
+.programs-list {
+  top: 13.6%;
+  left: 45%;
 }
 
 /* Estilos de cada idioma */
-.language-list li, .user-list li, .download-list li {
+.language-list li, .user-list li, .download-list li, .programs-list li {
   padding: 8px 15px;
   text-align: center;
   color: var(--white);
@@ -286,12 +327,12 @@ body{
   transition: background 0.3s ease;
 }
 
-.language-list li:hover, .user-list li:hover, .download-list li:hover {
+.language-list li:hover, .user-list li:hover, .download-list li:hover, .programs-list li:hover {
   background: rgba(100, 100, 100, 0.7);
 }
 
 /* Mostrar la lista al hacer hover */
-.dropdown.language:hover .language-list, .dropdown.user:hover .user-list, .dropdown.download:hover .download-list {
+.dropdown.language:hover .language-list, .dropdown.user:hover .user-list, .dropdown.download:hover .download-list, .dropdown.programs:hover .programs-list {
   display: block;
 }
 
@@ -314,6 +355,14 @@ body{
 }
 
 /*----- End Header -----*/
+
+/*----- Start Hero Home -----*/
+#hero-home {
+
+}
+
+/*----- End Hero Home -----*/
+
 
 
 /*----- Start Company -----*/
@@ -765,19 +814,19 @@ a, a:hover {
 .footer-20192 {
     margin-top: 20%;
     position: relative;
-    color: var(--black);
+    color: var(--white);
     padding: 1rem 0;
-    background-color: var(--golden2); 
+    background-color: var(--black); 
 }
 .footer-20192 .container {
   position: relative; 
 }
-.footer-20192 h3 {
+.footer-20192 h3, h2 {
   font-size: 16px;
   margin-bottom: 10px;
   margin-top: 0;
   line-height: 1.5; 
-  color: var(--black);
+  color: var(--white);
 }
 .footer-20192 .links li {
   margin-bottom: 10px;
@@ -785,10 +834,10 @@ a, a:hover {
   display: block; 
 }
 .footer-20192 .links li a {
-  color: var(--black); 
+  color: var(--white); 
 }
 .footer-20192 .links li a:hover {
-  color: var(--black); 
+  color: var(--golden); 
 }
 .footer-20192 .social li {
   display: inline-block;
@@ -804,12 +853,12 @@ a, a:hover {
     padding: 0;
 }
 .footer-20192 .social li a i{
-  color: var(--black); 
-  transition: all .5s;
+  color: var(--white); 
+  transition: ease .5s;
 }
 .footer-20192 .social li a i:hover{
-  color: var(--black);
-  transition: all .5s;
+  color: var(--golden);
+  transition: ease .5s;
 }
 .footer-20192 .social li a > span {
     position: absolute;
@@ -820,22 +869,27 @@ a, a:hover {
     transform: translate(-50%, -50%); 
 }
 .footer-20192 .footer-logo {
-  color: var(--black);
+  color: var(--white);
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: .1rem; 
 }
-.footer-20192 .copyright, small {
-  color: var(--black); 
+.footer-20192 .copyright, small, b {
+  color: var(--white); 
+  transition: ease 0.5s;
+}
+.footer-20192 .copyright p b:hover {
+  color: var(--golden);
+  transition: ease 0.5s;
 }
 .footer-20192 .cta {
-  -webkit-box-shadow: -20px -20px 0 0 var(--golden2);
-  box-shadow: -20px -20px 0 0 var(--golden2);
+  -webkit-box-shadow: -20px -20px 0 0 var(--black2);
+  box-shadow: -20px -20px 0 0 var(--black2);
   padding: 20px;
-  background-color: var(--golden);
+  background-color: var(--black);
   border-radius: 0 15px 15px 10px;
-  border-right: 1px solid var(--black);
-  border-bottom: 1px solid var(--black);
+  border-right: 2px solid var(--golden);
+  border-bottom: 2px solid var(--golden);
   top: -50px;
   position: relative;
   display: flex;

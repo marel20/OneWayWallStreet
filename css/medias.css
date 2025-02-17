@@ -6,9 +6,9 @@
         width: 100vw;
         height: 100vh;
         background: rgba(0, 0, 0, 0.9);
-        text-align: center;
+        text-align: left;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         display: flex;
         flex-direction: column;
         z-index: 999;
@@ -23,9 +23,11 @@
     }
 
     .nav-links a {
+        width: 100%;
         display: block;
-        text-align: center;
-        padding: 15px;
+        /* text-align: center; */
+        margin: auto 0 0 5% !important;
+        padding: 20px;
     }
 
     .nav-links.active {
@@ -42,11 +44,32 @@
         padding: 0px 20px;
         background: transparent;
     }
- 
-    .language-list {
-        top: 80px; /* Ajustamos para que no se superponga con el navbar */
-        right: 110px; /* Pegado a la derecha */
+
+    .icons {
+        margin: 10% 0 0 5% !important;
     }
+
+    .language-list{
+        top: 40.9%; /* Ajustamos para que no se superponga con el navbar */
+        left: 5%; /* Pegado a la izquierda */
+      }
+      .user-list{
+        top: 66%; /* Ajustamos para que no se superponga con el navbar */
+        left: 22%; /* Pegado a la derecha */
+      }
+      
+      .download-list{
+        top: 45.7%; /* Ajustamos para que no se superponga con el navbar */
+        left: 38%; /* Pegado a la derecha */
+      }
+      .programs-list {
+        top: 30%;
+        left: 32%;
+      }
+
+      .icons i::after{
+        top: 55px !important;
+      }
 
     /* Botón de menú */
     .menu-toggle {
@@ -71,5 +94,25 @@
     .menu-toggle i {
         font-size: 24px;
         color: white;
+      }
+}
+
+@media (min-width: 1450px) {
+    .language-list{
+        top: 11.5%; /* Ajustamos para que no se superponga con el navbar */
+        right: 10.3%; /* Pegado a la izquierda */
+      }
+      .user-list{
+        top: 11.5%; /* Ajustamos para que no se superponga con el navbar */
+        right: 6.3%; /* Pegado a la derecha */
+      }
+      
+      .download-list{
+        top: 11.5%; /* Ajustamos para que no se superponga con el navbar */
+        right: 2.3%; /* Pegado a la derecha */
+      }
+      .programs-list {
+        top: 11.1%;
+        left: 43%;
       }
 }

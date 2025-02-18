@@ -4,3 +4,12 @@
     50% { transform: translateX(-50%) scale(1.2); }
     100% { transform: translateX(-50%) scale(1); }
 }
+
+/* Animación para el cursor parpadeante */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: white; }
+  }
+  #typewriter {
+    animation: blink-caret 0.75s step-end infinite;
+  }

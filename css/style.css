@@ -82,6 +82,26 @@ body{
     margin: 0 auto;
 }
 
+.btn-signUp{
+  padding: 15px;
+  border-radius: 30px 10px;
+  border: 2px solid var(--golden);
+  background-color: var(--black);
+  color: var(--white) !important;
+  width: 20%;
+  text-align: center;
+  font-weight: bold;
+  transition: .5s all;
+  margin-top: 4%;
+}
+.btn-signUp:hover, .btn-signUp a h4:hover{
+  border-radius: 10px 30px;
+  border: 2px solid var(--black);
+  background-color: var(--white);
+  color: var(--black) !important;
+  transition: .5s all;
+}
+
 .arrow {
   margin: 0;
   display: flex;
@@ -124,10 +144,6 @@ body{
 .section{
   margin: 5% auto;
   padding: 30px 70px;
-}
-
-.btn-signUp {
-
 }
 
 /* Contenedor de la flecha */
@@ -178,6 +194,12 @@ position: fixed !important;
 }
 
 /* Logo */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
 .logo img {
   height: 100px;
 }
@@ -195,7 +217,6 @@ position: fixed !important;
   color: var(--white);
   text-decoration: none;
   font-size: 16px;
-  padding: 15px;
   transition: background 0.3s, border-radius 0.3s;
 }
 
@@ -319,9 +340,9 @@ position: fixed !important;
 }
 
 /* Estilos de cada idioma */
-.language-list li, .user-list li, .download-list li, .programs-list li {
-  padding: 8px 15px;
-  text-align: center;
+.language-list a li, .user-list a li, .download-list a li, .programs-list a li {
+  padding: 8px;
+  text-align: start;
   color: var(--white);
   cursor: pointer;
   transition: background 0.3s ease;
@@ -352,6 +373,21 @@ position: fixed !important;
   cursor: pointer;
   color: var(--white);
   padding: 8px;
+}
+
+#typewriter {
+  position: absolute;
+  width: 35%;
+  top: 70%;      /* Ajusta para colocarlo verticalmente (por ejemplo, al 50% del header) */
+  right: 10%;     /* Ajusta para colocarlo a la izquierda o derecha */
+  transform: translateY(-50%);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.8rem;
+  color: var(--white);
+  font-weight: bold;
+  white-space: wrap;
+  overflow: hidden;
+  /* border-right: 2px solid var(--golden); */
 }
 
 /*----- End Header -----*/

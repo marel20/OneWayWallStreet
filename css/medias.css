@@ -27,13 +27,18 @@
         display: block;
         /* text-align: center; */
         margin: auto 0 0 5% !important;
-        padding: 20px;
+        /* padding: 20px; */
     }
 
     .nav-links.active {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
+    }
+
+    .logo {
+        flex-direction: row-reverse;
+        gap: 50px !important;
     }
 
     /* Ajustes al navbar cuando está activo */
@@ -50,21 +55,21 @@
     }
 
     .language-list{
-        top: 40.9%; /* Ajustamos para que no se superponga con el navbar */
-        left: 5%; /* Pegado a la izquierda */
+        top: 37%;
+        left: 5%;
       }
       .user-list{
-        top: 66%; /* Ajustamos para que no se superponga con el navbar */
-        left: 22%; /* Pegado a la derecha */
+        top: 62%;
+        left: 22%;
       }
       
       .download-list{
-        top: 45.7%; /* Ajustamos para que no se superponga con el navbar */
-        left: 38%; /* Pegado a la derecha */
+        top: 41.8%;
+        left: 38%; 
       }
       .programs-list {
         top: 30%;
-        left: 32%;
+        left: 30%;
       }
 
       .icons i::after{
@@ -95,6 +100,14 @@
         font-size: 24px;
         color: white;
       }
+
+    #typewriter {
+        width: 95% !important;
+        top: 75% !important;
+        right: 0;
+        text-align: center;
+        font-size: 1.4rem !important;
+    }
 }
 
 @media (min-width: 1450px) {

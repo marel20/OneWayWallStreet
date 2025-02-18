@@ -387,6 +387,7 @@ position: fixed !important;
   font-weight: bold;
   white-space: wrap;
   overflow: hidden;
+  
   /* border-right: 2px solid var(--golden); */
 }
 

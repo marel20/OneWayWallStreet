@@ -1,4 +1,13 @@
 @media (max-width: 768px) {
+    .visible{
+      display: none !important;
+      visibility: hidden !important;
+    }
+
+    .hidden{
+        display: flex !important;
+        visibility: visible !important;
+    }
     .nav-links {
         position: fixed;
         top: 0;
@@ -108,9 +117,24 @@
         text-align: center;
         font-size: 1.4rem !important;
     }
+
+    .tittle-commitment {
+      width: 95%;
+      margin: 0 auto;
+      text-align: center;
+    }
 }
 
 @media (min-width: 1450px) {
+    .visible{
+      display: none !important;
+      visibility: hidden !important;
+    }
+
+    .hidden{
+        display: flex !important;
+        visibility: visible !important;
+    }
     .language-list{
         top: 11.5%; /* Ajustamos para que no se superponga con el navbar */
         right: 10.3%; /* Pegado a la izquierda */

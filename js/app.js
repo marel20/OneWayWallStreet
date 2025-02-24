@@ -1,4 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
+    //popup
+    const popup = document.getElementById("popup");
+    const closeBtn = document.querySelector(".close");
+
+    // Mostrar el popup al cargar la página
+    popup.style.display = "flex";
+
+    // Cerrar el popup al hacer clic en la "X"
+    closeBtn.addEventListener("click", function () {
+        popup.style.display = "none";
+    });
+
+    // Cerrar el popup automáticamente después de 1 minuto (60,000 ms)
+    setTimeout(function () {
+        popup.style.display = "none";
+    }, 60000);
+
+    
     // Navbar
     const navbar = document.querySelector(".navbar");
     const sectionBlack = document.getElementById("section-black");

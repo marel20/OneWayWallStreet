@@ -13,3 +13,16 @@
   #typewriter {
     animation: blink-caret 0.75s step-end infinite;
   }
+
+  /* Linea decorativa */
+  .content-line{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .line{
+    margin-top: 5%;
+    margin-right: 5%;
+    margin-bottom: 2%;
+    width: 40%;
+    border-bottom: 4px solid var(--white);
+  }

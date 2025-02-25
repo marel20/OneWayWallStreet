@@ -19,45 +19,71 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // Navbar
     const navbar = document.querySelector(".navbar");
-    const sectionBlack = document.getElementById("section-black");
-  
-    window.addEventListener("scroll", function () {
-      const sectionRect = sectionBlack.getBoundingClientRect();
-      if (sectionRect.bottom <= 0) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
-    });
-  
-    // Funcionalidad de cambio de idioma
-    // (Aquí iría el código para el cambio de idioma, si lo tienes)
-  
-    // Menu-toggle
+    const sectionBlackPC = document.getElementById("section-black");
+    const sectionBlackMobile = document.getElementById("section-black-mobile");
+    const navLinks = document.querySelectorAll(".nav-links a");
+    const navLink = document.querySelectorAll(".nav-links i");
     const menuToggle = document.querySelector(".menu-toggle");
-    const menuIcon = menuToggle.querySelector("i");
-    const navLinks = document.querySelector(".nav-links");
-    const navItems = document.querySelectorAll(".nav-links a");
+    const menuIcon = menuToggle.querySelector("i"); // Asegúrate de que el ícono esté dentro del botón
   
-    // Alternar menú y cambiar ícono
+    function handleNavbarScroll() {
+      const isMobile = window.innerWidth <= 768;
+      const section = isMobile ? sectionBlackMobile : sectionBlackPC;
+  
+      if (!section) return;
+  
+      const sectionRect = section.getBoundingClientRect();
+  
+      if (sectionRect.bottom <= 0) {
+        navbar.style.backgroundColor = "white"; // Fondo claro
+  
+        if (isMobile) {
+          menuIcon.style.color = "black"; // Cambia color del ícono en mobile
+        } else {
+          navLinks.forEach(link => link.style.color = "black"); // Solo en PC
+          navLink.forEach(link => link.style.color = "black"); // Solo en PC
+        }
+      } else {
+        navbar.style.backgroundColor = "transparent"; // Fondo original
+  
+        if (isMobile) {
+          menuIcon.style.color = ""; // Restaurar color original en mobile
+        } else {
+          navLinks.forEach(link => link.style.color = "");
+          navLink.forEach(link => link.style.color = "");
+        }
+      }
+    }
+  
+    window.addEventListener("scroll", handleNavbarScroll);
+  
+    // ---- Funcionalidad del menú ----
+    const navMenu = document.querySelector(".nav-links");
+    const navItems = document.querySelectorAll(".nav-links a");
+    
+  
     menuToggle.addEventListener("click", function () {
-      navLinks.classList.toggle("active");
-      menuToggle.classList.toggle("active"); // Para cambiar el ícono
+      navMenu.classList.toggle("active");
+      menuToggle.classList.toggle("active");
+      menuIcon.style.color = "white"; // Cambia color del ícono en mobile
     });
   
-    // Cerrar menú al hacer clic en un enlace
     navItems.forEach(link => {
       link.addEventListener("click", function () {
-        navLinks.classList.remove("active");
-        menuToggle.classList.remove("active"); // Volver al ícono de barras
+        navMenu.classList.remove("active");
+        menuToggle.classList.remove("active");
       });
     });
   
-    // Desplazar suavemente hacia abajo
-    document.getElementById("scrollToSection").addEventListener("click", function() {
-      document.getElementById("heroHome").scrollIntoView({ behavior: "smooth" });
-    });
+    // ---- Desplazamiento Suave ----
+    const scrollToSection = document.getElementById("scrollToSection");
+    if (scrollToSection) {
+      scrollToSection.addEventListener("click", function () {
+        document.getElementById("heroHome").scrollIntoView({ behavior: "smooth" });
+      });
+    }
   });
+
 
   //efecto typewriter
   document.addEventListener("DOMContentLoaded", function () {

@@ -159,8 +159,8 @@
       text-align: center;
       width: 90%;
       backdrop-filter: blur(10px);
-      height: 70vh;
-      overflow: auto;
+      height: auto;
+      /* overflow: auto; */
     }
     .text-overlay-mobile h2 {margin-top: 5%;}
     .text-overlay-mobile::-webkit-scrollbar{display: none;}
@@ -204,6 +204,67 @@
     .spool2-mobile .spool-item-mobile:nth-child(1){background: url('../assets/img/wall3.jpg') no-repeat center/cover;}
     .spool2-mobile .spool-item-mobile:nth-child(2){background: url('../assets/img/wall5.jpg') no-repeat center/cover;}
     .spool2-mobile .spool-item-mobile:nth-child(3){background: url('../assets/img/wall6.jpg') no-repeat center/cover;}
+    
+    .social-media {
+      flex-direction: column-reverse !important;
+      gap: 50px;
+    }
+    .social-media .iframe {width: 90%;}
+    .social-media .meeting-text {width: 90%;}
+    .meeting-text p{
+      font-size: 1rem;
+      width: 100%;
+    }
+  
+    .cards-programs {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+  }
+
+    .card-program {
+        width: 90%;  /* Más ancho para que se vea bien en mobile */
+        height: auto; /* Ajuste dinámico de altura */
+        transform: none;
+        opacity: 1;
+    }
+
+    .card-program.left, .card-program.right {
+        transform: none;
+        scale: 1; /* Eliminamos la diferencia de tamaño en mobile */
+    }
+
+    .card-program.center {
+        transform: scale(1.05); /* Un leve realce a la card del medio */
+    }
+
+    .card-program:hover {
+        transform: scale(1.07); /* Pequeño efecto al tocar */
+    }
+    
+    .confidence {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card-confidence {
+        width: 90%;
+        transform: scale(1) !important;
+        opacity: 1 !important;
+    }
+
+    .card-confidence:hover {
+        transform: scale(1.05) !important;
+    }
+
+    .confidence .card-confidence:nth-child(2) {
+      margin-top: 0 !important;
+    }
+    .confidence .card-confidence:nth-child(1),
+    .confidence .card-confidence:nth-child(3) {
+      margin-top: 0 !important;
+    }
+
   }
 
 

@@ -41,7 +41,7 @@
         <nav class="nav-links">
           <div>
             <a href="#home" style="padding: 15px;">Inicio</a>
-            <a href="#about" style="padding: 15px;">Mi Historia</a>
+            <a href="#heroHome" style="padding: 15px;">Mi Historia</a>
             <div class="dropdown programs">
               <a href="#programs" style="padding: 15px;">Programas</a>
               <ul class="programs-list">
@@ -262,8 +262,149 @@
         </div>
       </section>
 
+      <div class="content-line2">
+        <div class="line2"></div>
+      </div>
+
       <section>
-        <img src="assets/img/repair.png" alt="">
+        <!--Banner-->
+          <div class="banner-trading section">
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+              <div class="tradingview-widget-container__widget"></div>
+              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-stock-heatmap.js" async>
+              {
+              "exchanges": [],
+              "dataSource": "SPX500",
+              "grouping": "sector",
+              "blockSize": "market_cap_basic",
+              "blockColor": "change",
+              "locale": "es",
+              "symbolUrl": "",
+              "colorTheme": "dark",
+              "hasTopBar": false,
+              "isDataSetEnabled": false,
+              "isZoomEnabled": true,
+              "hasSymbolTooltip": true,
+              "width": 1300,
+              "height": 450
+            }
+              </script>
+            </div>
+            <!-- TradingView Widget END -->
+          </div>
+        <!--Banner-->
+        <article class="social-media">
+          <div class="iframe">
+            <div class="visible">
+              <iframe
+              class="visible"
+              title="Noticias"
+              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLMRCustomsSRL&tabs=timeline&width=1350&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+              width="900"
+              height="600"
+              scrolling="yes"
+              frameborder="0"
+              allowfullscreen="true"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            >
+            </iframe>
+            </div>
+            <div class="hidden">
+              <iframe
+              class="hidden"
+              title="Noticias"
+              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLMRCustomsSRL&tabs=timeline&width=300&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+              width="300"
+              height="500"
+              scrolling="yes"
+              frameborder="0"
+              allowfullscreen="true"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              >
+              </iframe>
+            </div>
+          </div>
+          <div class="meeting-text">
+            <p>
+              "Descubre cómo Matias pasó de 0 a $2,000 al mes, operando en bolsa con nuestro método probado. ¿Quieres hacer lo mismo?"
+            </p>
+            <div class="btnSignUp text-center">
+              <a href="#programs" style="color: #FFFFFF; margin-left: 5%;" class="btn-signUp"
+                >Unete a nosotros
+              </a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="programs" class="section">
+        <div class="tittle-commitment">
+          <h5 data-aos="zoom-in-down" data-aos-duration="1500">Únete ahora</h5>
+          <h2 data-aos="zoom-in-down" data-aos-duration="1500">Programas</h2>
+        </div>
+        <article class="cards-programs">
+          <div class="card-program left">
+            <h2>Programa Básico</h2>
+            <p>Ideal para empezar. Contenido fundamental.</p>
+            <p class="price">$49.99</p>
+            <button>Ir al programa</button>
+        </div>
+        <div class="card-program center">
+            <h2>Programa Avanzado</h2>
+            <p>El más completo. Para llevar tus habilidades al máximo nivel.</p>
+            <p class="price">$99.99</p>
+            <button>Ir al programa</button>
+        </div>
+        <div class="card-program right">
+            <h2>Programa Intermedio</h2>
+            <p>Perfecto para quienes ya tienen conocimientos previos.</p>
+            <p class="price">$79.99</p>
+            <button>Ir al programa</button>
+        </div>
+        </article>
+      </section>
+
+      <section id="services" class="section">
+        <h2 data-aos="zoom-in-left" data-aos-duration="1500" class="text-black">¿Por qué confiar en Luciano Pozzi?</h2>
+        <div class="service-confidence">
+          <div class="confidence">
+            <div class="card-confidence">
+              <i class="fa-solid fa-eye"></i>
+              <h4>Expandir tu visión</h4>
+              <p>Buscar nuevas perspectivas, aprender constantemente y conectar con personas diversas puede ayudarte a expandir tu visión y alcanzar horizontes que nunca imaginaste posibles.</p>
+            </div>
+            <div class="card-confidence">
+              <i class="fa-solid fa-brain" ></i>
+              <h4>Mejorar tus habilidades</h4>
+              <p>Invertir tiempo en la práctica constante, recibir retroalimentación constructiva y estar abierto al aprendizaje continuo son claves para mejorar y perfeccionar tus habilidades.</p>
+            </div>
+            <div class="card-confidence">
+              <i class="fa-solid fa-people-group"></i>
+              <h4>Apoyo y motivación</h4>
+              <p>El apoyo incondicional y las palabras motivadoras pueden encender una chispa en el alma, impulsándote a superar desafíos y alcanzar tus metas con determinación y confianza.</p>
+            </div>
+          </div>
+          <div class="confidence">
+            <div class="card-confidence">
+              <i class="fa-solid fa-handshake"></i>
+              <h4>Establecer redes de negocios</h4>
+              <p>El establecimiento de sólidas redes de negocios es esencial. Conectar con personas afines crea oportunidades, colaboraciones y crecimiento empresarial que impulsan el éxito y la innovación constantes.</p>
+            </div>
+            <div class="card-confidence">
+              <i class="fa-solid fa-users-cog"></i>
+              <h4>Habilidades de liderazgo</h4>
+              <p>El desarrollo de habilidades de liderazgo implica autenticidad, empatía y aprendizaje continuo. Líderes efectivos inspiran, guían y empoderan a sus equipos para alcanzar el éxito conjunto.</p>
+            </div>
+            <div class="card-confidence">
+              <i class="fa-solid fa-chalkboard-user"></i>
+              <h4>Educación a distancia</h4>
+              <p>La educación a distancia es una vía versátil de aprendizaje, permitiendo a estudiantes acceder a conocimientos desde cualquier lugar y dispositivo, fomentando la autodisciplina y el crecimiento personal.</p>
+            </div>
+          </div>
+          <div class="signUp text-right" style="margin-top: 3%;">
+            <a class="btn-signUp" href="#programs">Unete a nosotros</a>
+          </div>
       </section>
     </main>
 

@@ -65,7 +65,7 @@ body{
     position: fixed;
     bottom: 60px;
     right: 1.25rem;
-    z-index: 1000;
+    z-index: 1700;
 }
 
 .up{
@@ -210,7 +210,7 @@ header {
 }
 /* Estilos del Navbar */
 .navbar {
-position: fixed !important;
+  position: fixed !important;
   top: 0;
   left: 0;
   width: 100%;
@@ -634,168 +634,231 @@ position: fixed !important;
 
 /*----- End Wall Street info -----*/
 
-/*----- Start Programs -----*/
-/* .hero2 {
-  height: 50vh;
-  width: 100%;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat; 
-}
+/*----- Start Section Social -----*/
 
-.bg-programs{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50vh;
-  background: url('../assets/img/foto2.jpeg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  filter: blur(7px);
-  z-index: 1;
-}
-
-.new-cards{
+.banner-trading {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 95%;
-  gap: 30px;
-  margin: 3% auto;
+  gap: 20px;
+  padding: 15px;
+  margin: 5% auto;
 }
 
-.card-new{
-  max-width: 95%;
-  width: 33%;
-  height: 88vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 20px;
-  gap: 25px;
-  background: url('../assets/img/one-wayy.png');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: var(--golden);
-    --m:
-    radial-gradient(circle farthest-side at right,#000 99%,#0000) 
-      0 100%/46% 92% no-repeat,
-    radial-gradient(circle farthest-side at left ,#000 99%,#0000) 
-      100% 0/46% 92% no-repeat;
-  -webkit-mask: var(--m);
-          mask: var(--m);
-  filter: grayscale(.5);
-  transition: .3s linear;
-  cursor: pointer;
-}
-
-.card-new:hover{
-  -webkit-mask-position: 7.5% 50%,92.5% 50%;
-  mask-position: 7.5% 50%,92.5% 50%;
-  filter: grayscale(0);
-}
-
-.card-new h2{
-  text-align: center;
-  font-size: 2rem;
-}
-.card-new ul{
+.social-media{ 
   width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  margin: 0 auto;
+  padding: 25px;
 }
-.card-new li{
-  width: 100%;
+.social-media .iframe {width: 60%;}
+.social-media .meeting-text {width: 40%;}
+.meeting-text p{
+  font-family: "Georgia", serif;
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--black);
+  text-align: center;
+  max-width: 95%;
+  margin: 20px auto;
+  padding: 10px 20px 20px 50px;
+  border-left: 5px solid var(--golden);
+  position: relative;
+}
+.meeting-text p::before{
+  content: "“";
+  font-size: 4rem;
+  color: var(--golden);
+  position: absolute;
+  left: 0px;
+  top: -10px;
+}
+.meeting-text p::after{
+  content: "”";
+  font-size: 4rem;
+  color: var(--golden);
+  position: absolute;
+  right: -15px;
+  bottom: -10px;
 }
 
-.conten-acces-card{
-  width: 100%;
-  padding: 20px;
+/*----- End Section Social -----*/
+
+/*----- Start Programs -----*/
+#programs{
+  background-color: var(--black);
+}
+.cards-programs{
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
+  gap: 20px;
+  perspective: 1000px;
+  padding: 15px;
 }
-.card-acces{
-  width: 30%;
-  border-radius: 10px;
-  box-shadow: 15px 15px 10px var(--black2);
-  transition: all .5s;
+.card-program{
+  width: 260px;
+  height: 360px;
+  /* background: linear-gradient(135deg, #ff9800, #ffcc80); */
+  background: var(--black);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  position: relative;
+  cursor: pointer;
+  border: 2px solid var(--golden);
 }
-.card-acces:hover{
-  box-shadow: -15px -15px 10px var(--golden2);
-  transform: scale(1.03);
-  transition: all .5s;
+/* Cards laterales */
+.card-program.left {
+  transform: translateX(-30px) scale(0.9) rotateY(15deg);
+  opacity: 0.8;
 }
-.card-acces img{
-  border-radius: 10px;
+
+.card-program.right {
+  transform: translateX(30px) scale(0.9) rotateY(-15deg);
+  opacity: 0.8;
 }
-.card-acces h5{
-  margin-top: 5%;
-} */
+
+/* Card central destacada */
+.card-program.center {
+  transform: scale(1.1);
+  z-index: 2;
+  box-shadow: 0 15px 30px rgba(255, 223, 127, 0.4);
+}
+
+/* Efecto hover en la card central */
+.card-program.center:hover {
+  transform: scale(1.2) rotateY(5deg);
+  box-shadow: 0 20px 40px rgba(255, 223, 127, 0.6);
+}
+.card-program.left:hover, .card-program.right:hover {
+  transform: scale(1.01) rotateY(0deg); 
+  opacity: 1;
+  box-shadow: 0 10px 25px rgba(255, 223, 127, 0.3);
+}
+
+/* Estilo del contenido de la card */
+.card-program h2 {
+  font-size: 1.5rem;
+  color: var(--golden);
+  margin-bottom: 10px;
+}
+
+.card-program p {
+  font-size: 1rem;
+  color: var(--white);
+  opacity: 0.9;
+  margin-bottom: 15px;
+}
+
+.card-program .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--golden);
+  margin-bottom: 15px;
+}
+
+.card-program button {
+  background: var(--golden);
+  color: var(--black);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.card-program button:hover {
+  background: var(--white);
+  color: var(--black);
+  transform: scale(1.1);
+}
 
 /*----- End Programs -----*/
 
 /*----- Start Services -----*/
-/* .services h2{
-  text-align: justify;
+#services{
+  text-align: center;
+  padding: 50px 20px;
+  /* background-color: #0a0a0a; */
+  /* color: white; */
 }
-.services div p{
-  text-align: justify;
-}
-.service-confidence{
+
+.service-confidence {
   display: flex;
   flex-direction: column;
   gap: 35px;
   margin: 5% auto;
 }
-.confidence{
+
+.confidence {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 100px;
 }
-.card-confidence{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: justify;
-  font-size: 100%;
-  gap: 15px;
-  padding: 10px;
-  width: 32%;
-  max-width: 400px;
-  height: 65vh;
-  max-height: 350px;
-  border: 2px solid var(--black);
-  border-radius: 30px 10px;
-  box-shadow: 5px 5px 10px var(--black);
-  background-color: var(--golden2);
-  transition: all .5s;
-}
-.card-confidence:hover{
-  transform: scale(1.05);
-  transition: all .5s;
-}
-.card-confidence p{
-  max-width: 85%;
-  max-height: 30vh;
-  font-size: 15px;
+
+.card-confidence {
+  background: var(--black);
+  border-radius: 15px;
+  padding: 30px;
+  width: 280px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.icon-confidence{
-  border-radius: 70px;
-  border: var(--black) solid 4px;
-  padding: 20px;
+.card-confidence i {
+  font-size: 40px;
+  color: var(--golden);
+  margin-bottom: 15px;
 }
-.icon-confidence i{
-  font-size: 50px;
-} */
+
+.card-confidence h4 {
+  font-size: 20px;
+  color: var(--white);
+}
+
+.card-confidence p {
+  font-size: 14px;
+  color: var(--white);
+}
+
+/* Efecto de profundidad inversa */
+.confidence .card-confidence:nth-child(2) {
+  transform: scale(0.9);
+  opacity: 0.8;
+  margin-top: 3%;
+}
+
+.confidence .card-confidence:nth-child(1),
+.confidence .card-confidence:nth-child(3) {
+  transform: scale(1.1);
+  box-shadow: 0px 10px 30px var(--black);
+  margin-top: 3%;
+}
+
+/* Hover Effects */
+.confidence .card-confidence:nth-child(1):hover,
+.confidence .card-confidence:nth-child(3):hover {
+  transform: scale(1.15);
+  box-shadow: 0px 15px 35px var(--black);
+}
+
+.confidence .card-confidence:nth-child(2):hover {
+  transform: scale(1);
+  opacity: 1;
+  box-shadow: 0px 0px 20px var(--black);
+}
+
 /*----- End Services -----*/
 
 /*----- Start Testimonials -----*/

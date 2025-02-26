@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     let button = document.getElementById("sendButton");
-    button.innerHTML = 'Enviando... <span class="trading-arrow">📈</span>';
+    button.innerHTML = 'Enviando... <span class="trading-arrow"><i class="fa-solid fa-money-bill-trend-up"></i></span>';
     button.style.pointerEvents = "none";
 
     setTimeout(() => {

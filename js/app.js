@@ -105,3 +105,40 @@ document.addEventListener("DOMContentLoaded", function () {
     escribir();
   });
   
+  //form
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Evita el envío real del formulario
+
+    // Validar que los campos no estén vacíos
+    let name = document.getElementById("name").value.trim();
+    let subject = document.getElementById("subject").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    if (name === "" || subject === "" || email === "" || message === "") {
+        alert("Por favor, completa todos los campos.");
+        return;
+    }
+
+    // Animación de envío
+    let button = document.getElementById("sendButton");
+    button.innerHTML = "Enviando...";
+    button.style.pointerEvents = "none";
+
+    setTimeout(() => {
+        button.innerHTML = "Enviar";
+        button.style.pointerEvents = "auto";
+
+        // Mostrar banner de éxito
+        let banner = document.getElementById("successBanner");
+        banner.style.display = "block";
+
+        // Resetear el formulario
+        document.getElementById("contactForm").reset();
+
+        // Ocultar el banner después de 3 segundos
+        setTimeout(() => {
+            banner.style.display = "none";
+        }, 3000);
+    }, 2000);
+});

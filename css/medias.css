@@ -265,6 +265,25 @@
       margin-top: 0 !important;
     }
 
+    .card {
+      width: 95%;
+    }
+
+    .contact{
+      flex-direction: column !important;
+      justify-content: center !important;
+    }
+
+    .form {
+      width: 100% !important;
+      padding: 0 !important;
+      height: 60vh !important;
+    }
+
+    .input-group{
+      width: 100% !important;
+    }
+    
   }
 
 

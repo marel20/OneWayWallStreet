@@ -582,6 +582,25 @@
               <div id="successBanner" class="hidden-ban">
                 ✅ ¡Formulario enviado con éxito!
               </div>
+              <svg id="trading-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs>
+                    <!-- Flecha verde -->
+                    <marker id="arrowGreen" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L6,3 L0,6" fill="#00ff00" />
+                    </marker>
+        
+                    <!-- Flecha roja -->
+                    <marker id="arrowRed" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L6,3 L0,6" fill="#ff0000" />
+                    </marker>
+                </defs>
+        
+                <!-- Línea verde (alcista) -->
+                <path class="line green" d="M 0 100 L 20 80 L 40 85 L 60 60 L 80 75 L 100 30" marker-end="url(#arrowGreen)" />
+        
+                <!-- Línea roja (bajista) -->
+                <path class="line red" d="M 0 100 L 20 85 L 40 95 L 60 50 L 80 70 L 100 100" marker-end="url(#arrowRed)" />
+            </svg>
             </div>
             <div class="graphic visible">
               <!-- TradingView Widget BEGIN -->

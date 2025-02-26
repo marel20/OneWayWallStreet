@@ -956,11 +956,44 @@ header {
   backdrop-filter: blur(10px); /* Desenfoque */
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 4px 10px rgba(14, 241, 33, 0.2); */
   width: 70%;
   height: 75vh;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+/* Contenedor del SVG */
+#trading-lines {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Líneas animadas */
+.line {
+  fill: none;
+  stroke-width: 1;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: draw 3s linear infinite;
+}
+
+.green {
+  stroke: #00ff00;
+}
+
+.red {
+  stroke: #ff0000;
+  animation-delay: 0.5s;
+}
+
+
 .input-group {
   margin-bottom: 15px;
   width: 90%;
@@ -987,7 +1020,7 @@ input:focus, textarea:focus {
 }
 
 /* Botón de enviar */
-button {
+form button {
   width: 100%;
   padding: 12px;
   border: none;
@@ -999,18 +1032,20 @@ button {
   transition: transform 0.2s ease, background 0.3s ease;
 }
 
-button:hover {
+form button:hover {
   transform: scale(1.05);
   background: linear-gradient(45deg, #b8860b, #DFAF50);
+  transition: transform 0.2s ease, background 0.3s ease;
 }
 
 /* Banner de éxito */
 #successBanner {
-  margin-top: 15px;
+  margin-bottom: 35px;
   padding: 10px;
   border-radius: 8px;
   background: var(--golden);
   color: var(--white);
+  width: 100%;
   display: none;
 }
 .hidden-ban {

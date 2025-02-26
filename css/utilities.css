@@ -46,3 +46,13 @@
       50% { transform: translate(-50%, -50%) scale(1) translateX(10px); }
       100% { transform: translate(-50%, -50%) scale(1) translateX(0); }
   }
+
+  /* Animación de las líneas */
+  @keyframes draw {
+    0% {
+      stroke-dashoffset: 100;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }

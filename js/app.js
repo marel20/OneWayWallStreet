@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const navLink = document.querySelectorAll(".nav-links i");
     const menuToggle = document.querySelector(".menu-toggle");
     const menuIcon = menuToggle.querySelector("i"); // Asegúrate de que el ícono esté dentro del botón
+    const logo = document.querySelector(".logo");
   
     function handleNavbarScroll() {
       const isMobile = window.innerWidth <= 768;
@@ -39,18 +40,28 @@ document.addEventListener("DOMContentLoaded", function () {
   
         if (isMobile) {
           menuIcon.style.color = "black"; // Cambia color del ícono en mobile
+          logo.style.backgroundColor = "black";
+          logo.style.borderRadius = 50 + "px";
+          logo.style.transition = "0.5s ease";
         } else {
           navLinks.forEach(link => link.style.color = "black"); // Solo en PC
           navLink.forEach(link => link.style.color = "black"); // Solo en PC
+          logo.style.backgroundColor = "black";
+          logo.style.borderRadius = 50 + "px";
+          logo.style.transition = "0.5s ease";
         }
       } else {
         navbar.style.backgroundColor = "transparent"; // Fondo original
   
         if (isMobile) {
           menuIcon.style.color = ""; // Restaurar color original en mobile
+          logo.style.backgroundColor = "transparent";
+          logo.style.borderRadius = 0 + "px";
         } else {
           navLinks.forEach(link => link.style.color = "");
           navLink.forEach(link => link.style.color = "");
+          logo.style.backgroundColor = "transparent";
+          logo.style.borderRadius = 0 + "px";
         }
       }
     }
@@ -104,12 +115,24 @@ document.addEventListener("DOMContentLoaded", function () {
   
     escribir();
   });
+
+  //btn cards programs
+  document.getElementById("completeTrader").addEventListener("click", function() {
+    window.location.href = "../pages/complete.html"; // Reemplaza con la URL de destino
+  });
+
+  document.getElementById("masterTrader").addEventListener("click", function() {
+    window.location.href = "../pages/master.html"; // Reemplaza con la URL de destino
+  });
+
+  document.getElementById("professionalTrader").addEventListener("click", function() {
+    window.location.href = "../pages/profesional.html"; // Reemplaza con la URL de destino
+  });
   
   //form
   document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Evita el envío real del formulario
 
-    // Validar que los campos no estén vacíos
     let name = document.getElementById("name").value.trim();
     let subject = document.getElementById("subject").value.trim();
     let email = document.getElementById("email").value.trim();
@@ -120,23 +143,19 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    // Animación de envío
     let button = document.getElementById("sendButton");
-    button.innerHTML = "Enviando...";
+    button.innerHTML = 'Enviando... <span class="trading-arrow">📈</span>';
     button.style.pointerEvents = "none";
 
     setTimeout(() => {
         button.innerHTML = "Enviar";
         button.style.pointerEvents = "auto";
 
-        // Mostrar banner de éxito
         let banner = document.getElementById("successBanner");
         banner.style.display = "block";
 
-        // Resetear el formulario
         document.getElementById("contactForm").reset();
 
-        // Ocultar el banner después de 3 segundos
         setTimeout(() => {
             banner.style.display = "none";
         }, 3000);

@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", function () {
     //popup
     const popup = document.getElementById("popup");
@@ -29,15 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuIcon = menuToggle.querySelector("i"); // Asegúrate de que el ícono esté dentro del botón
     const logo = document.querySelector(".logo");
   
-    // Verifica si los elementos existen antes de continuar
-if (!navbar) console.warn("⚠️ navbar no encontrado.");
-if (!sectionBlackPC && !sectionBlackMobile) console.warn("⚠️ Ninguna sección negra encontrada.");
-
-// Solo ejecuta el scroll si al menos uno de los elementos existe
-if (navbar && (sectionBlackPC || sectionBlackMobile)) {
-  window.addEventListener("scroll", handleNavbarScroll);
-}
-
     function handleNavbarScroll() {
       const isMobile = window.innerWidth <= 768;
       const section = isMobile ? sectionBlackMobile : sectionBlackPC;

@@ -118,12 +118,16 @@
         color: var(--white);
       }
 
-    #typewriter {
+    #typewriter, #typewriterComplete, #typewriterMaster, #typewriterProfessional {
         width: 95% !important;
         top: 75% !important;
         right: 0;
         text-align: center;
         font-size: 1.4rem !important;
+    }
+
+    .card-acces{
+      width: 95% !important;
     }
 
     .tittle-commitment {
@@ -223,7 +227,7 @@
   }
 
     .card-program {
-        width: 90%;  /* Más ancho para que se vea bien en mobile */
+        width: 120% !important;  /* Más ancho para que se vea bien en mobile */
         height: auto; /* Ajuste dinámico de altura */
         transform: none;
         opacity: 1;

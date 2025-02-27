@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", function () {
     //popup
     const popup = document.getElementById("popup");
@@ -27,10 +29,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuIcon = menuToggle.querySelector("i"); // Asegúrate de que el ícono esté dentro del botón
     const logo = document.querySelector(".logo");
   
+    // Verifica si los elementos existen antes de continuar
+if (!navbar) console.warn("⚠️ navbar no encontrado.");
+if (!sectionBlackPC && !sectionBlackMobile) console.warn("⚠️ Ninguna sección negra encontrada.");
+
+// Solo ejecuta el scroll si al menos uno de los elementos existe
+if (navbar && (sectionBlackPC || sectionBlackMobile)) {
+  window.addEventListener("scroll", handleNavbarScroll);
+}
+
     function handleNavbarScroll() {
       const isMobile = window.innerWidth <= 768;
       const section = isMobile ? sectionBlackMobile : sectionBlackPC;
-  
+
       if (!section) return;
   
       const sectionRect = section.getBoundingClientRect();
@@ -96,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-  //efecto typewriter
+  //efecto typewriter home
   document.addEventListener("DOMContentLoaded", function () {
     const texto = "Bienvenidos a One Way. Vamos a enfrentarnos a los tiburones de Wall Street.";
     const target = document.getElementById("typewriter");
@@ -116,18 +127,78 @@ document.addEventListener("DOMContentLoaded", function () {
     escribir();
   });
 
+     //efecto typewriter Master Trader
+     document.addEventListener("DOMContentLoaded", function () {
+       const texto = "Bienvenido al curso Master Trader, el mas completo de ONE WAY. ¿Estás listo para unirte?";
+       const target = document.getElementById("typewriterMaster");
+       let index = 0;
+    
+       function escribirMaster() {
+         if (index < texto.length) {
+           target.textContent += texto.charAt(index);
+           index++;
+           setTimeout(escribir, 100); // Ajusta la velocidad (100 ms por carácter)
+         } else {
+           // Opcional: cuando termine, quitar el borde del cursor
+           target.style.borderRight = "none";
+         }
+       }
+    
+       escribirMaster();
+     });
+
+      //efecto typewriter Professional Trader
+   document.addEventListener("DOMContentLoaded", function () {
+     const texto = "Bienvenido al curso Professional Trader, nuestro curso intermedio de ONE WAY. ¿Estás listo para unirte?";
+     const target = document.getElementById("typewriterProfessional");
+     let index = 0;
+  
+     function escribirProfessional() {
+       if (index < texto.length) {
+         target.textContent += texto.charAt(index);
+         index++;
+         setTimeout(escribir, 100); // Ajusta la velocidad (100 ms por carácter)
+       } else {
+         // Opcional: cuando termine, quitar el borde del cursor
+         target.style.borderRight = "none";
+       }
+     }
+  
+     escribirProfessional();
+   });
+
+     //efecto typewriter Complete Trader
+     document.addEventListener("DOMContentLoaded", function () {
+       const texto = "Bienvenido al curso Complete Trader, el plan standard de ONE WAY. ¿Estás listo para unirte?";
+       const target = document.getElementById("typewriterComplete");
+       let index = 0;
+    
+       function escribirComplete() {
+         if (index < texto.length) {
+           target.textContent += texto.charAt(index);
+           index++;
+           setTimeout(escribir, 100); // Ajusta la velocidad (100 ms por carácter)
+         } else {
+           // Opcional: cuando termine, quitar el borde del cursor
+           target.style.borderRight = "none";
+         }
+       }
+    
+       escribirComplete();
+     });
+
   //btn cards programs
-  document.getElementById("completeTrader").addEventListener("click", function() {
-    window.location.href = "../pages/complete.html"; // Reemplaza con la URL de destino
-  });
+   document.getElementById("completeTrader").addEventListener("click", function() {
+     window.location.href = "../pages/complete.html"; // Reemplaza con la URL de destino
+   });
 
-  document.getElementById("masterTrader").addEventListener("click", function() {
-    window.location.href = "../pages/master.html"; // Reemplaza con la URL de destino
-  });
+   document.getElementById("masterTrader").addEventListener("click", function() {
+     window.location.href = "../pages/master.html"; // Reemplaza con la URL de destino
+   });
 
-  document.getElementById("professionalTrader").addEventListener("click", function() {
-    window.location.href = "../pages/profesional.html"; // Reemplaza con la URL de destino
-  });
+   document.getElementById("professionalTrader").addEventListener("click", function() {
+     window.location.href = "../pages/profesional.html"; // Reemplaza con la URL de destino
+   });
   
   //form
   document.getElementById("contactForm").addEventListener("submit", function(event) {
@@ -161,3 +232,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 3000);
     }, 2000);
 });
+
+//hotmart
+function importHotmart(){ 
+  var imported = document.createElement('script'); 
+  imported.src = 'https://static.hotmart.com/checkout/widget.min.js'; 
+  document.head.appendChild(imported); 
+ var link = document.createElement('link'); 
+ link.rel = 'stylesheet'; 
+ link.type = 'text/css'; 
+ link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css'; 
+ document.head.appendChild(link);	} 
+importHotmart(); 

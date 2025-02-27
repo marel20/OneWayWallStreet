@@ -410,7 +410,7 @@ header {
   color: var(--white);
 }
 
-#typewriter {
+#typewriter, #typewriterComplete, #typewriterMaster, #typewriterProfessional {
   position: absolute;
   width: 35%;
   top: 70%;      /* Ajusta para colocarlo verticalmente (por ejemplo, al 50% del header) */
@@ -779,6 +779,211 @@ header {
   background: var(--white);
   color: var(--black);
   transform: scale(1.1);
+}
+
+/* page programs */
+.content-text-programs-page {
+  width: 100vw;
+  background-color: var(--black);
+  padding: 15px;
+}
+.content-cards-page-program {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin: 0 auto;
+}
+.page-program-cards {
+  background: var(--white);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  height: auto;
+  font-family: "Open Sans";
+  border-radius: 10px;
+}
+
+.card-page-program{
+  width: 220px;
+  height: 321px;
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 14px 26px rgba(255, 255, 255, 0.04);
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+}
+.card-page-program:hover{
+  transform: translateY(-5px) scale(1.005) translateZ(0);
+  box-shadow: 0 24px 36px rgba(255, 255, 255, 0.63),
+    0 24px 46px var(--black);
+}
+.card-page-program:hover .overlay-page-program{
+  transform: scale(4) translateZ(0);
+}
+.card-page-program:hover .circle-program{
+  border-color: var(--grey);
+  background: var(--golden);
+}
+.card-page-program:hover .circle-program::after{
+  background: var(--white);
+}
+.card-page-program:hover h5{
+  color: var(--black);
+}
+.card-page-program:active{
+  transform: scale(1) translateZ(0);
+  box-shadow: 0 15px 24px rgba(255, 255, 255, 0.5),
+    0 15px 24px var(--black);
+}
+.card-page-program h5 {
+  font-size: 17px;
+  color: var(--black);
+  margin-top: 30px;
+  z-index: 1000;
+  transition: color 0.3s ease-out;
+  text-align: center;
+}
+.card-page-program h5 b {
+  color: var(--black);
+}
+.circle-program i{
+  color: var(--black);
+  font-size: 32px;
+  z-index: 1000;
+}
+
+.circle-program {
+  width: 131px;
+  height: 131px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--golden);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease-out;
+}
+
+.circle-program:after {
+  content: "";
+  width: 118px;
+  height: 118px;
+  display: block;
+  position: absolute;
+  background: var(--golden);
+  border-radius: 50%;
+  top: 7px;
+  left: 7px;
+  transition: opacity 0.3s ease-out;
+}
+
+.overlay-page-program {
+  width: 118px;
+  position: absolute; 
+  height: 118px;
+  border-radius: 50%;
+  background: var(--golden);
+  top: 70px;
+  left: 50px;
+  z-index: 0;
+  transition: transform 0.3s ease-out;
+}
+
+.content-text-programs-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 0 auto;
+}
+.text-page-programs {
+  max-width: 95%;
+  background: rgba(255, 255, 255, 0.897);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.671);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  color: var(--white);
+  text-align: justify;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 5% auto;
+}
+
+.text-page-programs::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(45deg, #DFAF50, transparent);
+  opacity: 0.6;
+  border-radius: 50%;
+  z-index: 1;
+}
+.text-page-programs::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(45deg, #DFAF50, transparent);
+  opacity: 0.6;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.text-page-programs p {
+  line-height: 1.8;
+  font-size: 16px;
+  z-index: 2;
+  position: relative;
+}
+.text-page-programs p b{
+  color: var(--black);
+}
+
+.conten-acces-card{
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.card-acces{
+  width: 30%;
+  border-radius: 10px;
+  box-shadow: 15px 15px 10px var(--black2);
+  transition: all .5s;
+}
+.card-acces:hover{
+  box-shadow: -15px -15px 10px var(--golden2);
+  transform: scale(1.03);
+  transition: all .5s;
+}
+.card-acces img{
+  border-radius: 10px;
+}
+.card-acces h5{
+  margin-top: 5%;
 }
 
 /*----- End Programs -----*/

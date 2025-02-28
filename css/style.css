@@ -508,7 +508,7 @@ header {
 /*----- Start Wall Street info -----*/
 
 #section-black-mobile {
-  display: none; /* Oculto por defecto en PC */
+  display: none;
 }
 
 .content-container {

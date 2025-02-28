@@ -203,7 +203,7 @@ body{
 header {
   width: 100%;
   height: 100vh;
-  background: url('../assets/img/foto3.jpg');
+  background: url('../assets/img/Web-OW.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -413,8 +413,8 @@ header {
 #typewriter, #typewriterComplete, #typewriterMaster, #typewriterProfessional {
   position: absolute;
   width: 35%;
-  top: 70%;      /* Ajusta para colocarlo verticalmente (por ejemplo, al 50% del header) */
-  right: 10%;     /* Ajusta para colocarlo a la izquierda o derecha */
+  top: 30%;      /* Ajusta para colocarlo verticalmente (por ejemplo, al 50% del header) */
+  left: 10%;     /* Ajusta para colocarlo a la izquierda o derecha */
   transform: translateY(-50%);
   font-family: 'Courier New', Courier, monospace;
   font-size: 1.8rem;

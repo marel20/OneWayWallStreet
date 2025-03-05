@@ -131,42 +131,42 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /*** 🔹 FORMULARIO ***/
-  function initForm() {
-      const form = document.getElementById("contactForm");
-      if (!form) return;
+//   function initForm() {
+//       const form = document.getElementById("contactForm");
+//       if (!form) return;
 
-      form.addEventListener("submit", function (event) {
-          event.preventDefault();
+//       form.addEventListener("submit", function (event) {
+//           event.preventDefault();
 
-          let name = document.getElementById("name").value.trim();
-          let subject = document.getElementById("subject").value.trim();
-          let email = document.getElementById("email").value.trim();
-          let message = document.getElementById("message").value.trim();
+//           let name = document.getElementById("name").value.trim();
+//           let subject = document.getElementById("subject").value.trim();
+//           let email = document.getElementById("email").value.trim();
+//           let message = document.getElementById("message").value.trim();
 
-          if (!name || !subject || !email || !message) {
-              alert("Por favor, completa todos los campos.");
-              return;
-          }
+//           if (!name || !subject || !email || !message) {
+//               alert("Por favor, completa todos los campos.");
+//               return;
+//           }
 
-          let button = document.getElementById("sendButton");
-          button.innerHTML = 'Enviando... <span class="trading-arrow"><i class="fa-solid fa-money-bill-trend-up"></i></span>';
-          button.style.pointerEvents = "none";
+//           let button = document.getElementById("sendButton");
+//           button.innerHTML = 'Enviando... <span class="trading-arrow"><i class="fa-solid fa-money-bill-trend-up"></i></span>';
+//           button.style.pointerEvents = "none";
 
-          setTimeout(() => {
-              button.innerHTML = "Enviar";
-              button.style.pointerEvents = "auto";
+//           setTimeout(() => {
+//               button.innerHTML = "Enviar";
+//               button.style.pointerEvents = "auto";
 
-              let banner = document.getElementById("successBanner");
-              banner.style.display = "block";
+//               let banner = document.getElementById("successBanner");
+//               banner.style.display = "block";
 
-              form.reset();
+//               form.reset();
 
-              setTimeout(() => {
-                  banner.style.display = "none";
-              }, 3000);
-          }, 2000);
-      });
-  }
+//               setTimeout(() => {
+//                   banner.style.display = "none";
+//               }, 3000);
+//           }, 2000);
+//       });
+//   }
 
   /*** 🔹 IMPORTAR HOTMART ***/
   function importHotmart() {
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initPopup();
   initNavbar();
   initButtons();
-  initForm();
+//   initForm();
   importHotmart();
 
   // Efecto typewriter en distintas páginas
